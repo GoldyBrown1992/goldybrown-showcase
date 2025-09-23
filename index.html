@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<!-- Model Application -->
+                <div id="model-apply" class="form-card">
+                    <h3>Model Application</h3>
+                    <p>Walk the runway at Vancouver's most exclusive fashion event. Limited spots available for professional and aspiring models.</p>
+                    
+                    <!-- Model Benefits Section -->
+                    <div style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%); border: 1px solid var(--gold); padding: 20px; margin: 20px 0;">
+                        <h4 style="color: var(--gold); margin-bottom: 15px; font-size: 20<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +20,13 @@
     
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-light: #F4E5B2;
-            --gold-dark: #B8941F;
+            --gold: #FFD700;
+            --gold-light: #FFF3B8;
+            --gold-dark: #DAA520;
             --black: #0A0A0A;
             --white: #FFFFFF;
-            --gray: #666666;
+            --gray: #888888;
+            --text-light: #E0E0E0;
         }
         
         * {
@@ -29,15 +37,23 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--white);
+            color: var(--text-light);
             background: var(--black);
             overflow-x: hidden;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
         }
         
         h1, h2, h3 {
             font-family: 'Bodoni Moda', serif;
             font-weight: 700;
             letter-spacing: 0.02em;
+        }
+        
+        /* Add better paragraph spacing */
+        p {
+            margin-bottom: 1rem;
         }
         
         .container {
@@ -122,12 +138,12 @@
         }
         
         .hero-subtitle {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 0.3em;
             margin-bottom: 20px;
-            font-weight: 300;
+            font-weight: 500;
         }
         
         .hero-title {
@@ -135,10 +151,11 @@
             font-weight: 900;
             line-height: 1;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
         }
         
         .hero-headline {
@@ -149,10 +166,11 @@
         }
         
         .hero-description {
-            font-size: 18px;
-            color: #cccccc;
-            line-height: 1.6;
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
             margin-bottom: 40px;
+            font-weight: 400;
         }
         
         .cta-buttons {
@@ -176,14 +194,16 @@
         }
         
         .btn-primary {
-            background: var(--gold);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: var(--black);
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
         }
         
         .btn-primary:hover {
-            background: var(--gold-dark);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
         }
         
         .btn-outline {
@@ -252,8 +272,9 @@
         }
         
         .info-card p {
-            color: #cccccc;
-            line-height: 1.6;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 16px;
         }
         
         /* Headliner Section */
@@ -284,9 +305,9 @@
         }
         
         .headliner-description {
-            color: #cccccc;
+            color: var(--text-light);
             line-height: 1.8;
-            font-size: 16px;
+            font-size: 18px;
         }
         
         .headliner-visual {
@@ -343,9 +364,10 @@
         }
         
         .form-card p {
-            color: #cccccc;
+            color: var(--text-light);
             margin-bottom: 30px;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 16px;
         }
         
         .fee-badge {
@@ -364,10 +386,11 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #cccccc;
+            color: var(--gold);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-weight: 500;
         }
         
         .form-group input,
@@ -450,8 +473,9 @@
         
         .ticket-features li {
             padding: 10px 0;
-            color: #cccccc;
+            color: var(--text-light);
             border-bottom: 1px solid #2a2a2a;
+            font-size: 16px;
         }
         
         /* Sponsors */
@@ -625,8 +649,8 @@
             <h1 class="hero-title">VANCOUVER<br>FASHION SHOWCASE</h1>
             <h2 class="hero-headline">Headlining Designer: Goldy Brown</h2>
             <p class="hero-description">
-                One night only. 5 visionary designers. 50 models.<br>
-                The Future of Fashion, Live in Vancouver.
+                One night only. 4 visionary designers. 50 elite models.<br>
+                Where luxury meets streetwear in the heart of Vancouver.
             </p>
             <div class="cta-buttons">
                 <a href="#model-apply" class="btn btn-primary">Apply as Model</a>
@@ -694,6 +718,22 @@
                 <div id="model-apply" class="form-card">
                     <h3>Model Application</h3>
                     <p>Walk the runway at Vancouver's most exclusive fashion event. Limited spots available for professional and aspiring models.</p>
+                    
+                    <!-- Model Benefits Section -->
+                    <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid var(--gold); padding: 25px; margin: 20px 0; border-radius: 5px;">
+                        <h4 style="color: var(--gold); margin-bottom: 15px; font-size: 20px; text-transform: uppercase; letter-spacing: 0.1em;">What You Get</h4>
+                        <ul style="list-style: none; padding: 0; color: #e0e0e0; line-height: 1.8;">
+                            <li style="padding: 5px 0;">✨ <strong style="color: var(--gold);">Professional Portfolio:</strong> High-res runway photos for your portfolio</li>
+                            <li style="padding: 5px 0;">📸 <strong style="color: var(--gold);">Media Exposure:</strong> Featured on event social media & press coverage</li>
+                            <li style="padding: 5px 0;">🎥 <strong style="color: var(--gold);">Video Content:</strong> Professional runway footage for your reel</li>
+                            <li style="padding: 5px 0;">👗 <strong style="color: var(--gold);">Designer Connections:</strong> Network with 5 established designers</li>
+                            <li style="padding: 5px 0;">💄 <strong style="color: var(--gold);">Pro Glam Team:</strong> Hair & makeup by industry professionals</li>
+                            <li style="padding: 5px 0;">🏆 <strong style="color: var(--gold);">Career Opportunity:</strong> Exposure to agencies & industry scouts</li>
+                            <li style="padding: 5px 0;">🎁 <strong style="color: var(--gold);">Model Gift Bag:</strong> Exclusive swag from sponsors</li>
+                            <li style="padding: 5px 0;">🎫 <strong style="color: var(--gold);">Guest Passes:</strong> 2 complimentary tickets for family/friends</li>
+                        </ul>
+                    </div>
+                    
                     <span class="fee-badge">Application Fee: $50</span>
                     
                     <form id="model-form" action="#" method="POST">
@@ -731,7 +771,7 @@
                 <div id="designer-apply" class="form-card">
                     <h3>Designer Application</h3>
                     <p>Showcase your collection alongside industry leaders. Limited to 3-4 guest designers for this exclusive event.</p>
-                    <span class="fee-badge">Participation Fee: $100</span>
+                    <span class="fee-badge">Participation Fee: $250-500</span>
                     
                     <form id="designer-form" action="#" method="POST">
                         <div class="form-group">
