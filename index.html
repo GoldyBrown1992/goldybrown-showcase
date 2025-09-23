@@ -1,1 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navpreet Banga Presents: Vancouver Fashion Showcase | Goldy Brown</title>
+    <meta name="description" content="Join Vancouver's most exclusive fashion showcase featuring headlining designer Goldy Brown. Apply as a model, designer, or get your tickets now.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E5B2;
+            --gold-dark: #B8941F;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            background: var(--black);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gold);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+            margin-top: 60px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="%23D4AF3710" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-headline {
+            font-size: clamp(28px, 4vw, 48px);
+            color: var(--gold);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+        
+        /* Event Info Section */
+        .event-info {
+            padding: 100px 0;
+            background: var(--black);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: clamp(36px, 5vw, 48px);
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .section-title span {
+            color: var(--gold);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .info-card {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.05;
+        }
+        
+        .info-card h3 {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .info-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        /* Headliner Section */
+        .headliner {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--black) 100%);
+            position: relative;
+        }
+        
+        .headliner-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .headliner-text h2 {
+            font-size: clamp(48px, 6vw, 72px);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .headliner-subtitle {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .headliner-description {
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .headliner-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .headliner-visual::before {
+            content: 'GOLDY\ABROWN';
+            position: absolute;
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(10, 10, 10, 0.2);
+            white-space: pre;
+            line-height: 0.8;
+            font-family: 'Bodoni Moda', serif;
+        }
+        
+        /* Application Forms */
+        .applications {
+            padding: 100px 0;
+            background: var(--black);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .form-card {
+            background: #0f0f0f;
+            border: 1px solid #2a2a2a;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .form-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+        
+        .form-card h3 {
+            color: var(--gold);
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .form-card p {
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .fee-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 5px 15px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cccccc;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            color: var(--white);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        /* Tickets Section */
+        .tickets {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--black) 100%);
+        }
+        
+        .ticket-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .ticket-card {
+            background: var(--black);
+            border: 2px solid #2a2a2a;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .ticket-card.vip {
+            border-color: var(--gold);
+        }
+        
+        .ticket-card.vip::before {
+            content: 'VIP';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 5px 15px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+        
+        .ticket-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        
+        .ticket-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .ticket-price span {
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .ticket-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .ticket-features li {
+            padding: 10px 0;
+            color: #cccccc;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        /* Sponsors */
+        .sponsors {
+            padding: 100px 0;
+            background: var(--black);
+        }
+        
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .sponsor-card {
+            background: #0f0f0f;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s;
+        }
+        
+        .sponsor-card.main {
+            grid-column: span 2;
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        }
+        
+        .sponsor-card:hover {
+            border-color: var(--gold);
+        }
+        
+        .sponsor-card h4 {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background: #0a0a0a;
+            border-top: 1px solid var(--gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            color: var(--gold);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: #999;
+            line-height: 1.6;
+        }
+        
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--gold);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2a;
+            color: #666;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-headline {
+                font-size: 28px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .form-grid,
+            .headliner-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sponsor-card.main {
+                grid-column: span 1;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">GOLDY BROWN</a>
+            <ul class="nav-links">
+                <li><a href="#event">Event</a></li>
+                <li><a href="#apply">Apply</a></li>
+                <li><a href="#tickets">Tickets</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Navpreet Banga Presents</p>
+            <h1 class="hero-title">VANCOUVER<br>FASHION SHOWCASE</h1>
+            <h2 class="hero-headline">Headlining Designer: Goldy Brown</h2>
+            <p class="hero-description">
+                One night only. 4 visionary designers. 50 elite models.<br>
+                Where luxury meets streetwear in the heart of Vancouver.
+            </p>
+            <div class="cta-buttons">
+                <a href="#model-apply" class="btn btn-primary">Apply as Model</a>
+                <a href="#designer-apply" class="btn btn-outline">Apply as Designer</a>
+                <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Info -->
+    <section id="event" class="event-info">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The <span>Experience</span></h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Date</h3>
+                    <p>Coming Soon<br>Spring 2025</p>
+                </div>
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>Exclusive Venue<br>Surrey/Vancouver<br>Details TBA</p>
+                </div>
+                <div class="info-card">
+                    <h3>Time</h3>
+                    <p>Evening Event<br>Doors: 6:00 PM<br>Show: 7:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <h3>Experience</h3>
+                    <p>Premium Fashion<br>Gourmet Catering<br>Exclusive Networking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Headliner Section -->
+    <section class="headliner">
+        <div class="container">
+            <div class="headliner-content">
+                <div class="headliner-text">
+                    <h2>GOLDY BROWN</h2>
+                    <p class="headliner-subtitle">Closing the Show</p>
+                    <p class="headliner-description">
+                        As the finale designer, Goldy Brown brings the perfect fusion of luxury and street culture to Vancouver's fashion scene. Known for pushing boundaries with bold designs that celebrate multicultural identity and modern elegance, Goldy Brown's collection promises to be the unforgettable climax of the evening.
+                        <br><br>
+                        This exclusive showcase features pieces that redefine contemporary fashion—where high-end craftsmanship meets urban authenticity. Each garment tells a story of innovation, cultural pride, and fearless self-expression.
+                    </p>
+                </div>
+                <div class="headliner-visual">
+                    <!-- Placeholder for brand visual -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Forms -->
+    <section id="apply" class="applications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join The <span>Showcase</span></h2>
+            </div>
+            <div class="form-grid">
+                <!-- Model Application -->
+                <div id="model-apply" class="form-card">
+                    <h3>Model Application</h3>
+                    <p>Walk the runway at Vancouver's most exclusive fashion event. Limited spots available for professional and aspiring models.</p>
+                    <span class="fee-badge">Application Fee: $50</span>
+                    
+                    <form id="model-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="model-name">Full Name</label>
+                            <input type="text" id="model-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model-email">Email</label>
+                            <input type="email" id="model-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model-ig">Instagram Handle</label>
+                            <input type="text" id="model-ig" name="instagram" placeholder="@username">
+                        </div>
+                        <div class="form-group">
+                            <label for="model-height">Height</label>
+                            <input type="text" id="model-height" name="height" placeholder="5'9&quot;">
+                        </div>
+                        <div class="form-group">
+                            <label for="model-experience">Experience Level</label>
+                            <textarea id="model-experience" name="experience" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="model-headshot">Upload Headshot</label>
+                            <input type="file" id="model-headshot" name="headshot" accept="image/*">
+                        </div>
+                        <!-- Stripe Payment Link Integration -->
+                        <!-- Replace # with your Stripe payment link for model application -->
+                        <a href="https://buy.stripe.com/test_XXXXXX" class="btn btn-primary" style="width: 100%; border: none;" target="_blank">Proceed to Payment ($50)</a>
+                    </form>
+                </div>
+
+                <!-- Designer Application -->
+                <div id="designer-apply" class="form-card">
+                    <h3>Designer Application</h3>
+                    <p>Showcase your collection alongside industry leaders. Limited to 3-4 guest designers for this exclusive event.</p>
+                    <span class="fee-badge">Participation Fee: $250-500</span>
+                    
+                    <form id="designer-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="designer-name">Full Name</label>
+                            <input type="text" id="designer-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-brand">Brand Name</label>
+                            <input type="text" id="designer-brand" name="brand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-portfolio">Portfolio URL</label>
+                            <input type="url" id="designer-portfolio" name="portfolio" placeholder="https://">
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-email">Email</label>
+                            <input type="email" id="designer-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-phone">Phone Number</label>
+                            <input type="tel" id="designer-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-collection">Collection Description</label>
+                            <textarea id="designer-collection" name="collection" rows="3"></textarea>
+                        </div>
+                        <!-- Stripe Payment Link Integration -->
+                        <!-- Replace # with your Stripe payment link for designer application -->
+                        <a href="https://buy.stripe.com/test_YYYYYY" class="btn btn-primary" style="width: 100%; border: none;" target="_blank">Proceed to Payment</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tickets Section -->
+    <section id="tickets" class="tickets">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Your <span>Tickets</span></h2>
+            </div>
+            <div class="ticket-options">
+                <div class="ticket-card">
+                    <h3>General Admission</h3>
+                    <div class="ticket-price">$50<span>/person</span></div>
+                    <ul class="ticket-features">
+                        <li>Entry + 1 Guest Pass</li>
+                        <li>Runway Show Access</li>
+                        <li>Complimentary Food & Drinks</li>
+                        <li>Designer Meet & Greet</li>
+                        <li>Event Photography Access</li>
+                    </ul>
+                    <!-- Stripe Payment Link Integration -->
+                    <!-- Replace # with your Stripe payment link for general admission -->
+                    <a href="https://buy.stripe.com/test_ZZZZZZ" class="btn btn-primary" style="width: 100%;" target="_blank">Purchase Tickets</a>
+                </div>
+                
+                <div class="ticket-card vip">
+                    <h3>VIP Experience</h3>
+                    <div class="ticket-price">$100<span>/person</span></div>
+                    <ul class="ticket-features">
+                        <li>Front Row Seating</li>
+                        <li>Entry + 1 Guest Pass</li>
+                        <li>Exclusive Swag Bag</li>
+                        <li>Premium Bar Access</li>
+                        <li>VIP Lounge Access</li>
+                        <li>Priority Designer Meet & Greet</li>
+                    </ul>
+                    <!-- Stripe Payment Link Integration -->
+                    <!-- Replace # with your Stripe payment link for VIP tickets -->
+                    <a href="https://buy.stripe.com/test_AAAAAA" class="btn btn-primary" style="width: 100%;" target="_blank">Get VIP Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Sponsors</span></h2>
+            </div>
+            <div class="sponsor-grid">
+                <div class="sponsor-card main">
+                    <h4>GOLDY BROWN</h4>
+                    <p>Main Sponsor & Headlining Designer</p>
+                </div>
+                <div class="sponsor-card">
+                    <h4>Sponsor Slot</h4>
+                    <p>Available</p>
+                </div>
+                <div class="sponsor-card">
+                    <h4>Sponsor Slot</h4>
+                    <p>Available</p>
+                </div>
+                <div class="sponsor-card">
+                    <h4>Sponsor Slot</h4>
+                    <p>Available</p>
+                </div>
+                <div class="sponsor-card">
+                    <h4>Sponsor Slot</h4>
+                    <p>Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>VANCOUVER FASHION SHOWCASE</h3>
+                    <p>A Navpreet Banga Production featuring Goldy Brown and Vancouver's finest designers. Creating unforgettable moments where luxury meets street culture.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener">IG</a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener">TT</a>
+                        <a href="mailto:info@goldybrown.com">@</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#event">Event Details</a>
+                    <a href="#apply">Applications</a>
+                    <a href="#tickets">Tickets</a>
+                    <a href="#sponsors">Sponsorship</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="mailto:info@goldybrown.com">info@goldybrown.com</a>
+                    <a href="#">Press Inquiries</a>
+                    <a href="#">Partnership Opportunities</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goldy Brown. All rights reserved. | Vancouver Fashion Showcase</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form handling - collect data before redirecting to Stripe
+        document.getElementById('model-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Store in sessionStorage to retrieve after payment
+            sessionStorage.setItem('modelApplication', JSON.stringify(data));
+            
+            // Redirect to Stripe payment link
+            // Replace with your actual Stripe payment link
+            window.open('https://buy.stripe.com/test_XXXXXX', '_blank');
+        });
+        
+        document.getElementById('designer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Store in sessionStorage to retrieve after payment
+            sessionStorage.setItem('designerApplication', JSON.stringify(data));
+            
+            // Redirect to Stripe payment link
+            // Replace with your actual Stripe payment link
+            window.open('https://buy.stripe.com/test_YYYYYY', '_blank');
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
