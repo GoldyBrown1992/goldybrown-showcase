@@ -162,7 +162,7 @@
         }
         
         .hero-headline {
-            font-size: clamp(24px, 4vw, 48px);
+            font-size: clamp(28px, 4vw, 48px);
             color: var(--gold);
             font-weight: 400;
             margin-bottom: 30px;
@@ -293,7 +293,7 @@
         }
         
         .headliner-text h2 {
-            font-size: clamp(36px, 6vw, 72px);
+            font-size: clamp(48px, 6vw, 72px);
             margin-bottom: 10px;
             line-height: 1;
         }
@@ -562,18 +562,10 @@
             filter: brightness(1.1);
         }
         
-        .sponsor-card.main img {
-            max-width: 350px;
-        }
-        
         .sponsor-card h4 {
             color: var(--gold);
             font-size: 24px;
             margin-bottom: 10px;
-        }
-        
-        .sponsor-card.main h4 {
-            font-size: 36px;
         }
         
         /* Footer */
@@ -907,14 +899,12 @@
                     <div class="benefits-box">
                         <h4>What You Get</h4>
                         <ul>
-                            <li>✨ <strong>Professional Portfolio:</strong> High-res runway photos for your portfolio</li>
-                            <li>📸 <strong>Media Exposure:</strong> Featured on event social media & press coverage</li>
-                            <li>🎥 <strong>Video Content:</strong> Professional runway footage for your reel</li>
-                            <li>👗 <strong>Designer Connections:</strong> Network with 5 established designers</li>
-                            <li>💄 <strong>Pro Glam Team:</strong> Hair & makeup by industry professionals</li>
-                            <li>🏆 <strong>Career Opportunity:</strong> Exposure to agencies & industry scouts</li>
-                            <li>🎁 <strong>Model Gift Bag:</strong> Exclusive swag from sponsors</li>
-                            <li>🎫 <strong>Guest Passes:</strong> 2 complimentary tickets for family/friends</li>
+                            <li><strong>Professional Portfolio:</strong> High-res runway photos for your portfolio</li>
+                            <li><strong>Media Exposure:</strong> Featured on event social media & press coverage</li>
+                            <li><strong>Video Content:</strong> Professional runway footage for your reel</li>
+                            <li><strong>Designer Connections:</strong> Network with established designers</li>
+                            <li><strong>Pro Glam Team:</strong> Hair & makeup by industry professionals</li>
+                            <li><strong>Guest Passes:</strong> 2 complimentary tickets for family/friends</li>
                         </ul>
                     </div>
                     
@@ -945,6 +935,8 @@
                             <label for="model-headshot">Upload Headshot</label>
                             <input type="file" id="model-headshot" name="headshot" accept="image/*">
                         </div>
+                        <!-- Stripe Payment Link Integration -->
+                        <!-- Replace # with your Stripe payment link for model application -->
                         <a href="https://buy.stripe.com/test_XXXXXX" class="btn btn-primary" style="width: 100%; border: none;" target="_blank">Proceed to Payment ($50)</a>
                     </form>
                 </div>
@@ -958,12 +950,12 @@
                     <div class="benefits-box">
                         <h4>Designer Benefits</h4>
                         <ul>
-                            <li>🎭 <strong>10-12 Models:</strong> Professional models to showcase your collection</li>
-                            <li>📺 <strong>Media Coverage:</strong> Press, photographers & videographers</li>
-                            <li>🎵 <strong>Full Production:</strong> Sound, lighting & stage management</li>
-                            <li>👥 <strong>Buyer Access:</strong> Connect with retailers & boutique owners</li>
-                            <li>📱 <strong>Social Promotion:</strong> Featured across all event channels</li>
-                            <li>🎬 <strong>Professional Content:</strong> Photos & video for marketing</li>
+                            <li><strong>10-12 Models:</strong> Professional models to showcase your collection</li>
+                            <li><strong>Media Coverage:</strong> Press, photographers & videographers</li>
+                            <li><strong>Full Production:</strong> Sound, lighting & stage management</li>
+                            <li><strong>Buyer Access:</strong> Connect with retailers & boutique owners</li>
+                            <li><strong>Social Promotion:</strong> Featured across all event channels</li>
+                            <li><strong>Professional Content:</strong> Photos & video for marketing</li>
                         </ul>
                     </div>
                     
@@ -979,8 +971,12 @@
                             <input type="text" id="designer-brand" name="brand" required>
                         </div>
                         <div class="form-group">
-                            <label for="designer-portfolio">Portfolio URL</label>
+                            <label for="designer-portfolio">Brand Website</label>
                             <input type="url" id="designer-portfolio" name="portfolio" placeholder="https://">
+                        </div>
+                        <div class="form-group">
+                            <label for="designer-ig">Instagram Handle</label>
+                            <input type="text" id="designer-ig" name="instagram" placeholder="@username">
                         </div>
                         <div class="form-group">
                             <label for="designer-email">Email</label>
@@ -994,7 +990,9 @@
                             <label for="designer-collection">Collection Description</label>
                             <textarea id="designer-collection" name="collection" rows="3"></textarea>
                         </div>
-                        <a href="https://buy.stripe.com/test_YYYYYY" class="btn btn-primary" style="width: 100%; border: none;" target="_blank">Proceed to Payment</a>
+                        <!-- Stripe Payment Link Integration -->
+                        <!-- Replace # with your Stripe payment link for designer application -->
+                        <a href="https://buy.stripe.com/test_YYYYYY" class="btn btn-primary" style="width: 100%; border: none;" target="_blank">Proceed to Payment ($100)</a>
                     </form>
                 </div>
             </div>
@@ -1018,6 +1016,8 @@
                         <li>Designer Meet & Greet</li>
                         <li>Event Photography Access</li>
                     </ul>
+                    <!-- Stripe Payment Link Integration -->
+                    <!-- Replace # with your Stripe payment link for general admission -->
                     <a href="https://buy.stripe.com/test_ZZZZZZ" class="btn btn-primary" style="width: 100%;" target="_blank">Purchase Tickets</a>
                 </div>
                 
@@ -1032,6 +1032,8 @@
                         <li>VIP Lounge Access</li>
                         <li>Priority Designer Meet & Greet</li>
                     </ul>
+                    <!-- Stripe Payment Link Integration -->
+                    <!-- Replace # with your Stripe payment link for VIP tickets -->
                     <a href="https://buy.stripe.com/test_AAAAAA" class="btn btn-primary" style="width: 100%;" target="_blank">Get VIP Access</a>
                 </div>
             </div>
@@ -1046,28 +1048,24 @@
             </div>
             <div class="sponsor-grid">
                 <div class="sponsor-card main">
-                    <!-- Replace with actual logo URL -->
-                    <img src="https://via.placeholder.com/350x150/D4AF37/000000?text=GOLDY+BROWN" alt="Goldy Brown">
-                    <h4>GOLDY BROWN</h4>
+                    <img src="https://i.imgur.com/0Mr8xlt.png"
+                         style="max-width: 400px; width: 100%; height: auto; margin-bottom: 20px;">
+                    <h4 style="font-size: 32px;">GOLDY BROWN</h4>
                     <p>Main Sponsor & Headlining Designer</p>
                 </div>
                 <div class="sponsor-card">
-                    <img src="https://via.placeholder.com/200x100/333333/D4AF37?text=Sponsor" alt="Sponsor">
                     <h4>Sponsor Slot</h4>
                     <p>Available</p>
                 </div>
                 <div class="sponsor-card">
-                    <img src="https://via.placeholder.com/200x100/333333/D4AF37?text=Sponsor" alt="Sponsor">
                     <h4>Sponsor Slot</h4>
                     <p>Available</p>
                 </div>
                 <div class="sponsor-card">
-                    <img src="https://via.placeholder.com/200x100/333333/D4AF37?text=Sponsor" alt="Sponsor">
                     <h4>Sponsor Slot</h4>
                     <p>Available</p>
                 </div>
                 <div class="sponsor-card">
-                    <img src="https://via.placeholder.com/200x100/333333/D4AF37?text=Sponsor" alt="Sponsor">
                     <h4>Sponsor Slot</h4>
                     <p>Available</p>
                 </div>
@@ -1140,19 +1138,35 @@
         // Form handling - collect data before redirecting to Stripe
         document.getElementById('model-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Collect form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
+            
+            // Store in sessionStorage to retrieve after payment
             sessionStorage.setItem('modelApplication', JSON.stringify(data));
+            
+            // Redirect to Stripe payment link
+            // Replace with your actual Stripe payment link
             window.open('https://buy.stripe.com/test_XXXXXX', '_blank');
         });
         
         document.getElementById('designer-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Collect form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
+            
+            // Store in sessionStorage to retrieve after payment
             sessionStorage.setItem('designerApplication', JSON.stringify(data));
+            
+            // Redirect to Stripe payment link
+            // Replace with your actual Stripe payment link
             window.open('https://buy.stripe.com/test_YYYYYY', '_blank');
         });
+        
+        // REMOVED PARALLAX EFFECT - NO MORE MOBILE SHAKING
     </script>
 </body>
 </html>
